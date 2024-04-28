@@ -1,5 +1,11 @@
 import './bootstrap.min.css';
 import "./navbar.css";
+import "../components/estilo.css"
+
+import App from '../App.jsx'
+
+import {Link, Outlet} from "react-router-dom"
+
 import  logo from "../assets/logo.png";
 import { BsCart2 } from "react-icons/bs";
 
@@ -37,46 +43,45 @@ function Navbar() {
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-end px-4 align-items-center" >
                     <li className="nav-item  px-1 iconoTransicion">
                     
-                    <a href="" className="nav-link active text-secondary  ">
-                        
-                        Inicio
-                    </a>
+                    
+                    <Link to={"/"} className="nav-link text-white" > Inicio </Link>
+                      
+                    
 
                     </li>
 
                     <li className="nav-item px-1 iconoTransicion">
 
-                    <a href="" className="nav-link text-white">
                     
-                        Productos
-                    </a>
+                    <Link to={"/itemsProductos"} className="nav-link text-white" > Productos </Link>
+                    
+                      
                     
                     </li>
 
                     <li className="nav-item px-1 iconoTransicion">
 
-                    <a href="" className="nav-link text-white">
-                    
-                        Galeria
-                    </a>
+                    <Link to={"/category/audio"} className="nav-link text-white" > Galeria </Link>
                     
                     </li>
 
                     <li className="nav-item px-1 iconoTransicion ">
 
-                    <a href="" className="nav-link text-white">
+                 
                         
-                        Nosotros
-                    </a>
+                    <Link to={""} className="nav-link text-white" > Nosotros </Link>
+                        
+                    
                     
                     </li>
 
                     <li className="nav-item px-1 iconoTransicion">
 
-                    <a href="" className="nav-link text-white">
+                  
                         
-                        Contacto
-                    </a>
+                    <Link to={""} className="nav-link text-white" > Contacto </Link>
+                        
+                    
                     
                     </li>
                    
@@ -94,6 +99,7 @@ function Navbar() {
 
 </div>
       </nav>
+      
     </>
   )
 }
