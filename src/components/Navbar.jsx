@@ -1,20 +1,64 @@
+import React, { useState } from 'react';
 import './bootstrap.min.css';
 import "./navbar.css";
 import "../components/estilo.css"
 
-import App from '../App.jsx'
+//import App from '../App.jsx'
 
 import {Link, Outlet} from "react-router-dom"
 
 import  logo from "../assets/logo.png";
 import { BsCart2 } from "react-icons/bs";
 
-function Navbar() {
+
+
+
+export let updateCartCount = () => {};
+export let updatecartItems = () => {};
+export let clearCartCount = () => {};
+
+
+
+
+const Navbar = () => {
+  let [cartCount, setCartCount] = useState(0);
+  let [cartItems, setCartItems] = useState([]);
+
+  updatecartItems = () => {
+    // Aquí podrías agregar lógica adicional, como almacenar el contador en el estado
+    console.log(cartItems);
+    return cartItems.map(item => item.toString());
+    
+  };
+
+ 
+  
+  // Función para actualizar el contador del carrito
+  updateCartCount = (id) => {
+    // Aquí podrías agregar lógica adicional, como almacenar el contador en el estado
+    cartCount += 1; // Suma el contador
+    setCartCount(cartCount);
+    setCartItems([...cartItems, id]);
+    console.log(cartItems);
+    
+  };
+  clearCartCount = (count,id) => {
+    
+    cartCount -= count; 
+    setCartCount(cartCount);
+     // Filtrar el id del array de cartItems
+     const updatedCartItems = cartItems.filter(item => item !== id);
+     setCartItems(updatedCartItems);
+
+   // console.log(cartItems);
+    
+  };
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary colorFondoNav ">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary colorFondoNav sticky-NavBar ">
 
-            <div className="w-100 text-bg-dark">
+            <div className="w-100 text-bg-dark ">
 
             <div className="container d-lg-flex   ">
                 
@@ -61,7 +105,7 @@ function Navbar() {
 
                     <li className="nav-item px-1 iconoTransicion">
 
-                    <Link to={"/category/audio"} className="nav-link text-white" > Galeria </Link>
+                    <Link to={"/"} className="nav-link text-white" > Galeria </Link>
                     
                     </li>
 
@@ -88,16 +132,18 @@ function Navbar() {
 
                 </ul>
                 <div className="carrito iconoTransicion" >
-                <BsCart2 size="30px"/>
-                <span className='badge'>2</span>
-
+                  <Link to={`/BuyProduct`}>
+                    <BsCart2 size="30px"/>
+                     
+                    <span className='badge'>{cartCount}</span>
+                  </Link>
                 </div>
      
     </div>
 
   </div>
 
-</div>
+            </div>
       </nav>
       
     </>

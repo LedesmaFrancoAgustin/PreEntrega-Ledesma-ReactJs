@@ -14,6 +14,10 @@
   filter: opacity(0.5);
 }
 
+.iconoTransicionLow:hover {
+  transform: scale(1.1);
+  font-weight: bold;
+}
 .iconoZoom {
   animation: zoom 5s infinite;
 }
@@ -24,7 +28,7 @@
     opacity: 1;
   }
   50% {
-    transform: scale(1.3);
+    transform: scale(1.2);
   }
   100% {
     transform: scale(1);
@@ -32,6 +36,10 @@
 }
 .iconoZoomCarritoHover:hover {
   animation: zoom 5s infinite;
+}
+
+.iconoZoomAddCarritoHover:hover {
+  animation: zoom 5s ;
 }
 
 @keyframes zoomCarritoHover {
@@ -547,4 +555,117 @@ a.more-link {
   text-align: center;
 }
 
+.item-list-container {
+  display: flex; /* Para que los elementos se distribuyan en una fila */
+  flex-wrap: wrap; /* Para que los elementos se envuelvan si no caben en una sola fila */
+}
+
+.item-container {
+  width: 25%; /* Ancho fijo para cada producto (25% para que haya 4 en una fila) */
+  padding: 0 15px; /* Espaciado entre productos */
+}
+
+.cardBuyProduct {
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  width: 190px;
+  min-height: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  
+
+}
+.imgCardProductosBuyProduct {
+  height: 120px;
+  width: 80%;
+ 
+}
+
+.btnAddBuy{
+  border: 2px inset #212529;
+  border-radius: 50px 50px 50px 50px;
+
+
+  background: rgba(203,46,129,0.16);
+  background: linear-gradient(69deg,rgba(203,46,129,0.16) 0%, rgba(236, 159, 217, 0.44) 60%);
+  background: -webkit-linear-gradient(69deg,rgba(203,46,129,0.16) 0%, rgba(235, 84, 197, 0.44) 60%);
+  background: -moz-linear-gradient(69deg,rgba(203,46,129,0.16) 0%, rgba(235, 60, 191, 0.44) 60%);
+  
+
+  padding: 3px 6px 3px 6px;
+
+  font-size: small;
+  
+  
+}
+.btnClearBuy{
+  background-color: #ff00007e; /* Fondo negro */
+  border : 1px solid black;
+  border-radius: 50%; /* Forma circular */
+  width: 40px; /* Ajusta el tamaño según sea necesario */
+  height: 40px; /* Ajusta el tamaño según sea necesario */
+  object-fit: cover; /* Para asegurarse de que la imagen se recorte correctamente */
+  display: block; /* Para asegurarse de que la imagen se comporte correctamente en su contenedor */
+}
+
+.img-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 9px;
+ /* Para asegurarse de que la imagen se comporte correctamente en su contenedor */
+}
 /*# sourceMappingURL=estilo.css.map */
+
+.btnLess{
+
+  font-size:large;
+  font-weight: 1000;
+  
+  background-color: #ff00007e; /* Fondo negro */
+  border : 1px solid black;
+  border-radius: 50%; /* Forma circular */
+  width: 25px; /* Ajusta el tamaño según sea necesario */
+  height: 25px; /* Ajusta el tamaño según sea necesario */
+
+}
+
+.btnMore{
+
+  font-size:large;
+  font-weight: 1000;
+  
+  background-color: #2fc22f7e; /* Fondo negro */
+  border : 1px solid black;
+  border-radius: 50%; /* Forma circular */
+  width: 25px; /* Ajusta el tamaño según sea necesario */
+  height: 25px; /* Ajusta el tamaño según sea necesario */
+
+}
+
+.btnPay{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  width: 25%;
+  background-color: #5f84ff65; /* Fondo negro */
+  border : 1px solid black;
+  border-radius: 5px; /* Forma circular */
+  padding: 5px 5px 5px 5px;
+}
+
+.sticky-NavBar {
+  /* Para compatibilidad con Safari */
+  position: sticky;
+  top: 1px; /* Ajusta este valor según lo necesites */
+  z-index: 1000; 
+}
+.sticky-form {
+  /* Para compatibilidad con Safari */
+  position: sticky;
+  top: 20px; /* Ajusta este valor según lo necesites */
+  z-index: 1000;
+}
+
+.ulCategory{
+  margin-bottom: 0px !important;
+}

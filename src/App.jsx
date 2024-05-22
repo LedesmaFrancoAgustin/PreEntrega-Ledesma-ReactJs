@@ -6,6 +6,9 @@ import Index from "./components/paginas/Index"
 import Navbar from "./components/Navbar";
 import ItemListContainer from "./components/paginas/ItemListContainer";
 import ItemDetailContainer from "./components/paginas/ItemDetail";
+
+import BuyProduct from './components/paginas/BuyProduct';
+
 import PageNotFound from "./components/paginas/PageNotFound"
 
 
@@ -26,6 +29,7 @@ function App() {
           <Route exact path="/itemsProductos" element={<ItemListContainer greeting={"Productos"}/> }/>
           <Route path="/category/:idCategory" element={<ItemListContainer greeting={"Productos"}/> }/>
           <Route path="/detail/:idProduct" element={<ItemDetailContainer/>}/>
+          <Route path="/BuyProduct" element={<BuyProduct />} />
           <Route path="*" element={<PageNotFound/>} />
   
 
