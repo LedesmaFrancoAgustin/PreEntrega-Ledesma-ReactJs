@@ -662,7 +662,7 @@ a.more-link {
 .sticky-form {
   /* Para compatibilidad con Safari */
   position: sticky;
-  top: 20px; /* Ajusta este valor según lo necesites */
+  top: 110px; /* Ajusta este valor según lo necesites */
   z-index: 1000;
 }
 
