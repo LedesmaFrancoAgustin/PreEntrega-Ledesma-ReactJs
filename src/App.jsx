@@ -17,7 +17,7 @@ import PageNotFound from "./components/paginas/PageNotFound"
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  //const [count, setCount] = useState(0)
 
   return (
     <>

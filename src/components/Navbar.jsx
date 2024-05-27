@@ -5,7 +5,7 @@ import "../components/estilo.css"
 
 //import App from '../App.jsx'
 
-import {Link, Outlet} from "react-router-dom"
+import {Link} from "react-router-dom"
 
 import  logo from "../assets/logo.png";
 import { BsCart2 } from "react-icons/bs";

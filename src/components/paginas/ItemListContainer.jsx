@@ -15,27 +15,24 @@ function ItemListContainer({ greeting }) {
       try {
         const db = getFirestore();
         const itemsCollection = collection(db, 'Products');
+        const snapshot = await getDocs(itemsCollection);
+        const productsList = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
-        
+        console.log('Productos obtenidos de Firestore:', productsList);
 
-        if (loading) { // Verificar si ya se han cargado los productos
-          const snapshot = await getDocs(itemsCollection);
-          const productsList = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-
-          console.log('Productos obtenidos de Firestore:', productsList);
-
-          setProducts(productsList);
-          setLoading(false); // Cambiar el estado de carga a false una vez cargados los productos
-        }
+        setProducts(productsList);
+        setLoading(false);
       } catch (error) {
         console.log('Error al obtener productos:', error);
       }
     };
 
     fetchProducts();
-  }, [loading]); // Dependencia actualizada para cargar productos solo una vez
+  }, []); // Dependencia vacía para que se ejecute solo una vez al montar el componente
 
-  // Resto del componente sin cambios
+  if (loading) {
+    return <div>Cargando productos...</div>;
+  }
 
   return (
     <>  
@@ -56,9 +53,9 @@ function ItemListContainer({ greeting }) {
           </li>
         </ul>
             <div className='d-flex iconoTransicion mx-5 '>
-                <Link Link to={"/itemsProductos"} className="nav-link text-white px-2">Limpiar
+            <Link to={"/itemsProductos"} className="nav-link text-white px-2">Limpiar
                 <img src={imgclear} className=" px-3" alt={imgclear} />
-                </Link>
+            </Link>
              </div>
       </div>
       
